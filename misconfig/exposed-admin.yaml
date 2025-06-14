@@ -1,0 +1,15 @@
+id: exposed-admin-panel
+info:
+  author: harpy
+  name: Exposed Admin Panel Detection
+  severity: medium
+  tags: misconfig,admin
+requests:
+- matchers:
+  - status:
+    - 200
+    type: status
+  method: GET
+  path:
+  - '{{BaseURL}}/admin'
+  - '{{BaseURL}}/admin/login'

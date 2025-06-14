@@ -1,0 +1,16 @@
+id: detect-cms
+info:
+  author: harpy
+  name: CMS Detection
+  severity: info
+  tags: technology,fingerprint
+requests:
+- matchers:
+  - type: word
+    words:
+    - Powered by WordPress
+    - Joomla
+    - Drupal
+  method: GET
+  path:
+  - '{{BaseURL}}'

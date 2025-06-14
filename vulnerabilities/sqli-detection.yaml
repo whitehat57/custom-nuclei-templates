@@ -1,0 +1,14 @@
+id: sqli-detection
+info:
+  author: harpy
+  name: SQL Injection Detection
+  severity: high
+  tags: sqli
+requests:
+- matchers:
+  - type: word
+    words:
+    - SQL syntax error
+  method: GET
+  path:
+  - '{{BaseURL}}/search?q=1'' OR ''1''=''1'

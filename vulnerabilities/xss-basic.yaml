@@ -1,0 +1,14 @@
+id: xss-basic
+info:
+  author: harpy
+  name: Basic XSS Detection
+  severity: medium
+  tags: xss
+requests:
+- matchers:
+  - type: word
+    words:
+    - <script>alert(1)</script>
+  method: GET
+  path:
+  - '{{BaseURL}}/search?q=<script>alert(1)</script>'
